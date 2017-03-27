@@ -96,6 +96,7 @@ public class MyWatchFaceService extends CanvasWatchFaceService {
         private int mHeight;
         private float mCenterX;
         private float mCenterY;
+        private float mScale = 1;
 
         @Override
         public void onCreate(SurfaceHolder holder) {

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016 The Android Open Source Project
+ * Copyright (C) 2017 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,13 +18,13 @@ apply plugin: 'com.android.application'
 
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "21.1.2"
+    compileSdkVersion 25
+    buildToolsVersion '25.0.2'
 
     defaultConfig {
         applicationId "com.android.example.watchface"
         minSdkVersion 21
-        targetSdkVersion 23
+        targetSdkVersion 25
         versionCode 1
         versionName "1.0"
     }
@@ -37,6 +37,7 @@ android {
 }
 
 dependencies {
-    compile 'com.google.android.support:wearable:1.4.0'
-    compile 'com.google.android.gms:play-services-wearable:8.4.0'
+    provided 'com.google.android.wearable:wearable:2.0.0'
+    compile 'com.google.android.support:wearable:2.0.0'
+    compile 'com.google.android.gms:play-services-wearable:10.2.1'
 }
