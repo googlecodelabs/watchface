@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016 The Android Open Source Project
+ * Copyright (C) 2017 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -119,17 +119,12 @@ public class MyWatchFaceService extends CanvasWatchFaceService {
         private float mCenterX;
         private float mCenterY;
         private float mScale = 1;
-        private Rect mCardBounds = new Rect();
 
         @Override
         public void onCreate(SurfaceHolder holder) {
             super.onCreate(holder);
 
-            setWatchFaceStyle(new WatchFaceStyle.Builder(MyWatchFaceService.this)
-                    .setCardPeekMode(WatchFaceStyle.PEEK_MODE_SHORT)
-                    .setBackgroundVisibility(WatchFaceStyle.BACKGROUND_VISIBILITY_INTERRUPTIVE)
-                    .setShowSystemUiTime(false)
-                    .build());
+            setWatchFaceStyle(new WatchFaceStyle.Builder(MyWatchFaceService.this).build());
 
             mBackgroundPaint = new Paint();
             mBackgroundPaint.setColor(Color.BLACK);
@@ -274,10 +269,6 @@ public class MyWatchFaceService extends CanvasWatchFaceService {
             canvas.drawCircle(mCenterX, mCenterY, HAND_END_CAP_RADIUS, mHandPaint);
             // restore the canvas' original orientation.
             canvas.restore();
-
-            if (mAmbient) {
-                canvas.drawRect(mCardBounds, mBackgroundPaint);
-            }
         }
 
         private void drawHand(Canvas canvas, float handLength) {
@@ -305,12 +296,6 @@ public class MyWatchFaceService extends CanvasWatchFaceService {
              * so we may need to start or stop the timer.
              */
             updateTimer();
-        }
-
-        @Override
-        public void onPeekCardPositionUpdate(Rect rect) {
-            super.onPeekCardPositionUpdate(rect);
-            mCardBounds.set(rect);
         }
 
         private void registerReceiver() {
