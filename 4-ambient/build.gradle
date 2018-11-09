@@ -16,15 +16,13 @@
 
 apply plugin: 'com.android.application'
 
-
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    compileSdkVersion 28
 
     defaultConfig {
         applicationId "com.android.example.watchface"
         minSdkVersion 21
-        targetSdkVersion 25
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
     }
@@ -37,7 +35,7 @@ android {
 }
 
 dependencies {
-    provided 'com.google.android.wearable:wearable:2.0.0'
-    compile 'com.google.android.support:wearable:2.0.0'
-    compile 'com.google.android.gms:play-services-wearable:10.2.1'
+    compileOnly 'com.google.android.wearable:wearable:2.4.0'
+    implementation 'com.google.android.support:wearable:2.4.0'
+    implementation 'com.google.android.gms:play-services-wearable:16.0.1'
 }

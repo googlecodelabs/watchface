@@ -218,10 +218,10 @@ public class MyWatchFaceService extends CanvasWatchFaceService {
             }
 
             /*
-            * Whether the timer should be running depends on whether we're visible
-            * (as well as whether we're in ambient mode),
-            * so we may need to start or stop the timer.
-            */
+             * Whether the timer should be running depends on whether we're visible
+             * (as well as whether we're in ambient mode),
+             * so we may need to start or stop the timer.
+             */
             updateTimer();
         }
 
